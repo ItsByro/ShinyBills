@@ -1,5 +1,6 @@
 Hello 👋 
-This is "ShinyBills": A Desktop Banking Simulation, simulating what areal bank/atm is
+
+This is "ShinyBills": A Desktop Banking Simulation, simulating what a real bank/atm is:
 
 # FEATURES
 (Currently only has 2 [6/21/26])
