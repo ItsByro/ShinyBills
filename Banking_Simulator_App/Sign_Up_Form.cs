@@ -72,6 +72,7 @@ namespace Banking_Simulator_App
 			this.Close();
 		}
 		
+		//guides user what to put in the txtbox
 		void HelpFuncClick(object sender, EventArgs e)
 		{
 			MessageBox.Show("Username:\nYour username that will be used in the Bank Simulator\n\nEmail:\nEnter your email address\n\nPhone Number:\nEnter your Phone Number\n\nPassword:\nEnter your password\n(Recommended at 8 characters)\n\nConfirm your Password:\nJust repeat the password you write:}");
@@ -81,7 +82,7 @@ namespace Banking_Simulator_App
 		{
 			if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back)
 		    {
-		        e.Handled = true; //prevents user to type a string/symbols >.<
+		        e.Handled = true; //prevents user to type a string/symbols
 		    }
 		}
 	}

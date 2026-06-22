@@ -24,6 +24,7 @@ namespace Banking_Simulator_App
 			MessageBox.Show("E4sT3r_=3qq :p");
 		}
 		
+		//Whenever the btn click, puts user to another window form and let user sign up for a new account
 		void BtnSignUpClick(object sender, EventArgs e)
 		{
 			Sign_Up_Form SignUp = new Sign_Up_Form();
@@ -32,37 +33,44 @@ namespace Banking_Simulator_App
 			this.Hide();
 		}
 		
+		//checks user if their email/password was in the "UserDatabase.txt"
 		void BtnLogInClick(object sender, EventArgs e)
 		{
 			string email = txtEmailAddress.Text;
 			string password = txtPassword.Text;
 			
+			//checks if user has no email written
 			if (email == "") 
 			{
 				MessageBox.Show("Enter your email.");
 				return;
 			}
+			//checks if user password was not written
 			else if (password == "")
 			{
 				MessageBox.Show("Enter your password.");
 				return;
 			}
+			//chekcs if email doesn't even have an '@'.
 			else if (!email.Contains("@"))
 			{
 				MessageBox.Show("Incorrect Format of Email [Missing '@'].");
 				return;
 			}
+			//checks if user email doesnt exist in the "UserDatabase.txt"
 			else if (!UserDataBase.UserExists(email))
 			{
 				MessageBox.Show("Cannot Verify Sign Up First");
 				return;
 			}
+			//checks if the written email/password has a typo/incorrect.
 			else if (!UserDataBase.LogInUser(email, password))
 			{
 				MessageBox.Show("Incorrect Password / Email");
 				return;
 			}
 			
+			//if all was pass, auto direct to another windows form named: "DashBoard_Menu.cs"
 			MessageBox.Show("Welcome back!");
 			DashBoard_Menu Dashboard = new DashBoard_Menu();
 			Dashboard.FormClosed += (s, args) => this.Show();

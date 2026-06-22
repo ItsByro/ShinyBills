@@ -12,14 +12,18 @@ namespace Banking_Simulator_App
 {
 	public class UserDataBase
 	{
+		/*Saves user in a  ".txt" file
+		 * always used in "Sign In Form"
+		 */
 		public static void SaveUser(string Username, string Email, string Phone_Number, string Password)
 		{
-			//Formatting [Username|EMAIL|PN|Pass|Balancw]										always start at 0 when creating new account
+			//Formatting [Username|Email|PhoneNumber|Password|Balance]						   always start at 0 when creating new account
 			string line = Username + "|" + Email + "|" + Phone_Number + "|" + Password + "|" + "0.00";
 			
 			File.AppendAllText("UserDatabase.txt", line + Environment.NewLine);
 		}
 		
+		//checks for user if exist 
 		public static bool UserExists(string Email)
 		{
 			if (File.Exists("UserDatabase.txt") == false) 
@@ -40,6 +44,10 @@ namespace Banking_Simulator_App
 			return false;
 		}
 		
+		/*checks if user is in, more like an authentication check
+ 		 *so checks the email and password if it exists in the "UserDatabase.txt",
+		 *if so, updates the session class with the user's data
+		 */
 		public static bool LogInUser(string email, string password)
 		{
 			if (File.Exists("UserDatabase.txt") == false)
@@ -49,6 +57,7 @@ namespace Banking_Simulator_App
 			
 			string[] lines = File.ReadAllLines("UserDatabase.txt");
 			
+			//checks each line in "UserDatabase.txt"
 			foreach (string line in lines) 
 			{
 				string[] parts = line.Split('|');
@@ -63,6 +72,7 @@ namespace Banking_Simulator_App
 			return false;
 		}
 		
+		//update balances based ojn changes from the session class
 		public static void UpdateBalance(string email, double newBalance)
 		{
 			if (File.Exists("UserDatabase.txt") == false)

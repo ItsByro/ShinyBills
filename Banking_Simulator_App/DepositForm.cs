@@ -32,10 +32,12 @@ namespace Banking_Simulator_App
 				return;
 			}
 			
+			double OldBalance = Session.Balance;
 			double anticipitatedBalance = Session.Balance + DepositedMoney;
 			
 			try 
 			{	
+				//if no issue has been found, updates the balance via session class first before the disk
 				Session.Balance = anticipitatedBalance;	
 				UserDataBase.UpdateBalance(Session.Email, Session.Balance);			
 							
@@ -45,6 +47,8 @@ namespace Banking_Simulator_App
 			} 
 			catch (Exception ex) 
 			{
+				//if an issue confirms, revert to the last balance.
+				Session.Balance = OldBalance;
 				MessageBox.Show(string.Format("Transaction failed. Could not connect to the database. Please try again. {0}", ex.Message));
 			}
 		}
