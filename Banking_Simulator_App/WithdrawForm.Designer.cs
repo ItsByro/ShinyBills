@@ -88,7 +88,7 @@ namespace Banking_Simulator_App
 			this.tbxWithdrawMoney.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.tbxWithdrawMoney.Cursor = System.Windows.Forms.Cursors.PanNW;
 			this.tbxWithdrawMoney.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.tbxWithdrawMoney.Location = new System.Drawing.Point(25, 141);
+			this.tbxWithdrawMoney.Location = new System.Drawing.Point(25, 150);
 			this.tbxWithdrawMoney.Name = "tbxWithdrawMoney";
 			this.tbxWithdrawMoney.Size = new System.Drawing.Size(423, 39);
 			this.tbxWithdrawMoney.TabIndex = 9;

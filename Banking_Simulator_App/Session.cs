@@ -10,7 +10,7 @@ namespace Banking_Simulator_App
 {
 	public class Session
 	{
-		/*thold data first before writing into the ".txt" file
+		/* holds data first before writing into the ".txt" file
 		 * Read/Update by Withdraw, Deposit, Trandsfer Funds, and Transaction History
 		 * This checks for the class LoginUser
 		 */
