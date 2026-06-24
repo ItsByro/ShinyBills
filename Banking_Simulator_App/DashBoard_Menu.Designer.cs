@@ -91,6 +91,7 @@ namespace Banking_Simulator_App
 			this.btnTransaction.TabIndex = 4;
 			this.btnTransaction.Text = "History";
 			this.btnTransaction.UseVisualStyleBackColor = false;
+			this.btnTransaction.Click += new System.EventHandler(this.BtnTransactionClick);
 			// 
 			// label1
 			// 

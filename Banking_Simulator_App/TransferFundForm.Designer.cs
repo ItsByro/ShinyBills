@@ -77,7 +77,7 @@ namespace Banking_Simulator_App
 			// 
 			this.lblTermsConditions.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
 												| System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblTermsConditions.Location = new System.Drawing.Point(203, 216);
+			this.lblTermsConditions.Location = new System.Drawing.Point(225, 216);
 			this.lblTermsConditions.Name = "lblTermsConditions";
 			this.lblTermsConditions.Size = new System.Drawing.Size(270, 28);
 			this.lblTermsConditions.TabIndex = 4;
@@ -145,7 +145,7 @@ namespace Banking_Simulator_App
 			this.MaximizeBox = false;
 			this.Name = "TransferFundForm";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-			this.Text = "Transfer Fund Form";
+			this.Text = "Transfer Fund";
 			this.ResumeLayout(false);
 			this.PerformLayout();
 		}

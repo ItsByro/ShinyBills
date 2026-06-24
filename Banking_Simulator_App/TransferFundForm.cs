@@ -10,18 +10,12 @@ using System.Windows.Forms;
 
 namespace Banking_Simulator_App
 {
-	/// <summary>
-	/// Description of TransferFundForm.
-	/// </summary>
 	public partial class TransferFundForm : Form
 	{
 		public TransferFundForm()
 		{
 			InitializeComponent();
-			
 		}
-
-		
 		
 		void LblTermsConditionsClick(object sender, EventArgs e)
 		{
@@ -43,7 +37,6 @@ namespace Banking_Simulator_App
 				MessageBoxButtons.OK,
 				MessageBoxIcon.Information 
 			);
-						
 		}
 		
 		void BtnTransferFundsClick(object sender, EventArgs e)
@@ -81,6 +74,12 @@ namespace Banking_Simulator_App
 				MessageBox.Show("Invalid: Cannot Transfer To yourself","WARNING", MessageBoxButtons.OK, MessageBoxIcon.Error);
 				return;
 			}
+			//Checks if the email contains "@"
+			if(RecipientEmail.Contains("@") == false)
+			{
+				MessageBox.Show("Incorrect Email.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				return;
+			}
 			//checks if the recipient is already have an account, if not, provide a message
 			if(!UserDataBase.UserExists(RecipientEmail))
 			{
@@ -94,9 +93,29 @@ namespace Banking_Simulator_App
 				return;
 			}			
 			
-
+			double senderOldBalance = Session.Balance;
+			double senderNewBalance = Session.Balance - TransferAmount;
+			double recipientOldBalance = UserDataBase.GetBalance(RecipientEmail);
+			double recipientNewBalance = recipientOldBalance + TransferAmount;
 			
-			//if nothing and all correct it will proceeds
+			try 
+			{
+				Session.Balance = senderNewBalance;
+				UserDataBase.UpdateBalance(Session.Email, senderNewBalance);
+				UserDataBase.UpdateBalance(RecipientEmail, recipientNewBalance);
+				
+				MessageBox.Show("Transfer Successful.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+				tbx_AmountInputted.Clear();
+				tbxRecipientEmail.Clear();
+				this.Close();
+			} 
+			catch (Exception ex) 
+			{
+				Session.Balance = senderOldBalance;
+				UserDataBase.UpdateBalance(Session.Email, senderOldBalance);
+				UserDataBase.UpdateBalance(RecipientEmail, recipientOldBalance);
+				MessageBox.Show(string.Format("Transfer failed due to : {0}", ex.Message), "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
 		}
 	}
 }

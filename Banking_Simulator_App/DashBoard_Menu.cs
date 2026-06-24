@@ -41,11 +41,6 @@ namespace Banking_Simulator_App
 			RefreshBoardData();
 		}
 		
-		void DashBoard_MenuLoad(object sender, EventArgs e)
-		{
-			RefreshBoardData();
-		}
-		
 		void BtnTransferFundsClick(object sender, EventArgs e)
 		{
 			this.Hide();
@@ -54,5 +49,21 @@ namespace Banking_Simulator_App
 			this.Show();
 			RefreshBoardData();
 		}
+		
+		void BtnTransactionClick(object sender, EventArgs e)
+		{
+			this.Hide();
+			TransactionHistoryForm TransactionHistory = new TransactionHistoryForm();
+			TransactionHistory.ShowDialog();
+			this.Show();
+			RefreshBoardData();
+		}
+		
+		void DashBoard_MenuLoad(object sender, EventArgs e)
+		{
+			RefreshBoardData();
+		}
+		
+		
 	}
 }
