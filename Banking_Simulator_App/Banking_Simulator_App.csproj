@@ -96,6 +96,9 @@
     <EmbeddedResource Include="Sign_Up_Form.resx">
       <DependentUpon>Sign_Up_Form.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="TransactionHistoryForm.resx">
+      <DependentUpon>TransactionHistoryForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TransferFundForm.resx">
       <DependentUpon>TransferFundForm.cs</DependentUpon>
     </EmbeddedResource>

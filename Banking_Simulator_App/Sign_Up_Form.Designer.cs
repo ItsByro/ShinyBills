@@ -49,7 +49,11 @@ namespace Banking_Simulator_App
 			this.lblpassword = new System.Windows.Forms.Label();
 			this.lblConfirmPassword = new System.Windows.Forms.Label();
 			this.label1 = new System.Windows.Forms.Label();
-			this.label3 = new System.Windows.Forms.Label();
+			this.label2 = new System.Windows.Forms.Label();
+			this.lblTermsConditions = new System.Windows.Forms.Label();
+			this.label5 = new System.Windows.Forms.Label();
+			this.checkboxTermsCondition = new System.Windows.Forms.CheckBox();
+			this.btn_exit = new System.Windows.Forms.Button();
 			this.SuspendLayout();
 			// 
 			// lblGreet
@@ -59,7 +63,7 @@ namespace Banking_Simulator_App
 			this.lblGreet.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lblGreet.Location = new System.Drawing.Point(80, 30);
 			this.lblGreet.Name = "lblGreet";
-			this.lblGreet.Size = new System.Drawing.Size(313, 47);
+			this.lblGreet.Size = new System.Drawing.Size(326, 47);
 			this.lblGreet.TabIndex = 0;
 			this.lblGreet.Text = "Welcome, New User!";
 			this.lblGreet.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -71,7 +75,7 @@ namespace Banking_Simulator_App
 			this.txbUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txbUsername.Location = new System.Drawing.Point(35, 121);
 			this.txbUsername.Name = "txbUsername";
-			this.txbUsername.Size = new System.Drawing.Size(394, 32);
+			this.txbUsername.Size = new System.Drawing.Size(416, 32);
 			this.txbUsername.TabIndex = 1;
 			// 
 			// txbPhoneNumber
@@ -81,7 +85,7 @@ namespace Banking_Simulator_App
 			this.txbPhoneNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txbPhoneNumber.Location = new System.Drawing.Point(35, 282);
 			this.txbPhoneNumber.Name = "txbPhoneNumber";
-			this.txbPhoneNumber.Size = new System.Drawing.Size(394, 32);
+			this.txbPhoneNumber.Size = new System.Drawing.Size(416, 32);
 			this.txbPhoneNumber.TabIndex = 2;
 			this.txbPhoneNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxbPhoneNumberKeyPress);
 			// 
@@ -92,7 +96,7 @@ namespace Banking_Simulator_App
 			this.txbEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txbEmail.Location = new System.Drawing.Point(35, 199);
 			this.txbEmail.Name = "txbEmail";
-			this.txbEmail.Size = new System.Drawing.Size(394, 32);
+			this.txbEmail.Size = new System.Drawing.Size(416, 32);
 			this.txbEmail.TabIndex = 3;
 			// 
 			// txbPassword
@@ -102,7 +106,7 @@ namespace Banking_Simulator_App
 			this.txbPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txbPassword.Location = new System.Drawing.Point(35, 366);
 			this.txbPassword.Name = "txbPassword";
-			this.txbPassword.Size = new System.Drawing.Size(394, 32);
+			this.txbPassword.Size = new System.Drawing.Size(416, 32);
 			this.txbPassword.TabIndex = 4;
 			// 
 			// txbConfirmPass
@@ -112,7 +116,7 @@ namespace Banking_Simulator_App
 			this.txbConfirmPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txbConfirmPass.Location = new System.Drawing.Point(35, 449);
 			this.txbConfirmPass.Name = "txbConfirmPass";
-			this.txbConfirmPass.Size = new System.Drawing.Size(394, 32);
+			this.txbConfirmPass.Size = new System.Drawing.Size(416, 32);
 			this.txbConfirmPass.TabIndex = 5;
 			// 
 			// btnSignUp
@@ -120,9 +124,9 @@ namespace Banking_Simulator_App
 			this.btnSignUp.BackColor = System.Drawing.Color.Wheat;
 			this.btnSignUp.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
 			this.btnSignUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnSignUp.Location = new System.Drawing.Point(243, 510);
+			this.btnSignUp.Location = new System.Drawing.Point(330, 603);
 			this.btnSignUp.Name = "btnSignUp";
-			this.btnSignUp.Size = new System.Drawing.Size(173, 78);
+			this.btnSignUp.Size = new System.Drawing.Size(146, 73);
 			this.btnSignUp.TabIndex = 6;
 			this.btnSignUp.Text = "Sign Up";
 			this.btnSignUp.UseVisualStyleBackColor = false;
@@ -131,7 +135,7 @@ namespace Banking_Simulator_App
 			// HelpFunc
 			// 
 			this.HelpFunc.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Italic | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.HelpFunc.Location = new System.Drawing.Point(54, 510);
+			this.HelpFunc.Location = new System.Drawing.Point(37, 604);
 			this.HelpFunc.Name = "HelpFunc";
 			this.HelpFunc.Size = new System.Drawing.Size(138, 78);
 			this.HelpFunc.TabIndex = 7;
@@ -192,28 +196,74 @@ namespace Banking_Simulator_App
 			this.label1.TabIndex = 13;
 			this.label1.Text = resources.GetString("label1.Text");
 			// 
-			// label3
+			// label2
 			// 
-			this.label3.Location = new System.Drawing.Point(-282, 591);
-			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(865, 23);
-			this.label3.TabIndex = 15;
-			this.label3.Text = resources.GetString("label3.Text");
+			this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label2.Location = new System.Drawing.Point(48, 547);
+			this.label2.Name = "label2";
+			this.label2.Size = new System.Drawing.Size(634, 80);
+			this.label2.TabIndex = 19;
+			this.label2.Text = "you are agreeing to ShinyBills policies \r\nstated within";
+			// 
+			// lblTermsConditions
+			// 
+			this.lblTermsConditions.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
+												| System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblTermsConditions.Location = new System.Drawing.Point(181, 519);
+			this.lblTermsConditions.Name = "lblTermsConditions";
+			this.lblTermsConditions.Size = new System.Drawing.Size(270, 122);
+			this.lblTermsConditions.TabIndex = 18;
+			this.lblTermsConditions.Text = "Terms and Conditions";
+			this.lblTermsConditions.Click += new System.EventHandler(this.LblTermsConditionsClick);
+			// 
+			// label5
+			// 
+			this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label5.Location = new System.Drawing.Point(48, 519);
+			this.label5.Name = "label5";
+			this.label5.Size = new System.Drawing.Size(329, 77);
+			this.label5.TabIndex = 17;
+			this.label5.Text = "By Reading";
+			// 
+			// checkboxTermsCondition
+			// 
+			this.checkboxTermsCondition.Location = new System.Drawing.Point(26, 505);
+			this.checkboxTermsCondition.Name = "checkboxTermsCondition";
+			this.checkboxTermsCondition.Size = new System.Drawing.Size(450, 77);
+			this.checkboxTermsCondition.TabIndex = 16;
+			this.checkboxTermsCondition.UseVisualStyleBackColor = true;
+			// 
+			// btn_exit
+			// 
+			this.btn_exit.BackColor = System.Drawing.Color.Wheat;
+			this.btn_exit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+			this.btn_exit.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btn_exit.Location = new System.Drawing.Point(216, 603);
+			this.btn_exit.Name = "btn_exit";
+			this.btn_exit.Size = new System.Drawing.Size(108, 73);
+			this.btn_exit.TabIndex = 20;
+			this.btn_exit.Text = "Exit";
+			this.btn_exit.UseVisualStyleBackColor = false;
+			this.btn_exit.Click += new System.EventHandler(this.Btn_exitClick);
 			// 
 			// Sign_Up_Form
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.PapayaWhip;
-			this.ClientSize = new System.Drawing.Size(466, 606);
-			this.Controls.Add(this.label3);
+			this.ClientSize = new System.Drawing.Size(488, 688);
+			this.Controls.Add(this.HelpFunc);
+			this.Controls.Add(this.btn_exit);
+			this.Controls.Add(this.btnSignUp);
+			this.Controls.Add(this.label2);
+			this.Controls.Add(this.lblTermsConditions);
+			this.Controls.Add(this.label5);
+			this.Controls.Add(this.checkboxTermsCondition);
 			this.Controls.Add(this.lblConfirmPassword);
 			this.Controls.Add(this.lblpassword);
 			this.Controls.Add(this.lblpn);
 			this.Controls.Add(this.lblemail);
 			this.Controls.Add(this.lblUsername);
-			this.Controls.Add(this.HelpFunc);
-			this.Controls.Add(this.btnSignUp);
 			this.Controls.Add(this.txbConfirmPass);
 			this.Controls.Add(this.txbPassword);
 			this.Controls.Add(this.txbEmail);
@@ -230,7 +280,11 @@ namespace Banking_Simulator_App
 			this.ResumeLayout(false);
 			this.PerformLayout();
 		}
-		private System.Windows.Forms.Label label3;
+		private System.Windows.Forms.Button btn_exit;
+		private System.Windows.Forms.CheckBox checkboxTermsCondition;
+		private System.Windows.Forms.Label label5;
+		private System.Windows.Forms.Label lblTermsConditions;
+		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Label lblConfirmPassword;
 		private System.Windows.Forms.Label lblpassword;

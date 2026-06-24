@@ -42,6 +42,8 @@ namespace Banking_Simulator_App
 			this.label2 = new System.Windows.Forms.Label();
 			this.lblBalance = new System.Windows.Forms.Label();
 			this.btnTransferFunds = new System.Windows.Forms.Button();
+			this.btnTermsandConditions = new System.Windows.Forms.Button();
+			this.btnLogOut = new System.Windows.Forms.Button();
 			this.SuspendLayout();
 			// 
 			// lblGreet
@@ -85,7 +87,7 @@ namespace Banking_Simulator_App
 			// 
 			this.btnTransaction.BackColor = System.Drawing.Color.WhiteSmoke;
 			this.btnTransaction.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnTransaction.Location = new System.Drawing.Point(257, 298);
+			this.btnTransaction.Location = new System.Drawing.Point(257, 281);
 			this.btnTransaction.Name = "btnTransaction";
 			this.btnTransaction.Size = new System.Drawing.Size(151, 102);
 			this.btnTransaction.TabIndex = 4;
@@ -104,7 +106,7 @@ namespace Banking_Simulator_App
 			// 
 			// label2
 			// 
-			this.label2.Location = new System.Drawing.Point(-293, 429);
+			this.label2.Location = new System.Drawing.Point(-298, 509);
 			this.label2.Name = "label2";
 			this.label2.Size = new System.Drawing.Size(1075, 23);
 			this.label2.TabIndex = 6;
@@ -128,7 +130,7 @@ namespace Banking_Simulator_App
 			// 
 			this.btnTransferFunds.BackColor = System.Drawing.Color.WhiteSmoke;
 			this.btnTransferFunds.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnTransferFunds.Location = new System.Drawing.Point(59, 298);
+			this.btnTransferFunds.Location = new System.Drawing.Point(59, 281);
 			this.btnTransferFunds.Name = "btnTransferFunds";
 			this.btnTransferFunds.Size = new System.Drawing.Size(151, 102);
 			this.btnTransferFunds.TabIndex = 8;
@@ -136,12 +138,38 @@ namespace Banking_Simulator_App
 			this.btnTransferFunds.UseVisualStyleBackColor = false;
 			this.btnTransferFunds.Click += new System.EventHandler(this.BtnTransferFundsClick);
 			// 
+			// btnTermsandConditions
+			// 
+			this.btnTermsandConditions.BackColor = System.Drawing.Color.WhiteSmoke;
+			this.btnTermsandConditions.Font = new System.Drawing.Font("Times New Roman", 14F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnTermsandConditions.Location = new System.Drawing.Point(59, 404);
+			this.btnTermsandConditions.Name = "btnTermsandConditions";
+			this.btnTermsandConditions.Size = new System.Drawing.Size(151, 102);
+			this.btnTermsandConditions.TabIndex = 9;
+			this.btnTermsandConditions.Text = "Read\r\nTerms and Conditions";
+			this.btnTermsandConditions.UseVisualStyleBackColor = false;
+			this.btnTermsandConditions.Click += new System.EventHandler(this.BtnTermsandConditionsClick);
+			// 
+			// btnLogOut
+			// 
+			this.btnLogOut.BackColor = System.Drawing.Color.WhiteSmoke;
+			this.btnLogOut.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnLogOut.Location = new System.Drawing.Point(257, 404);
+			this.btnLogOut.Name = "btnLogOut";
+			this.btnLogOut.Size = new System.Drawing.Size(151, 102);
+			this.btnLogOut.TabIndex = 10;
+			this.btnLogOut.Text = "Log Out";
+			this.btnLogOut.UseVisualStyleBackColor = false;
+			this.btnLogOut.Click += new System.EventHandler(this.BtnLogOutClick);
+			// 
 			// DashBoard_Menu
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.Snow;
-			this.ClientSize = new System.Drawing.Size(466, 461);
+			this.ClientSize = new System.Drawing.Size(466, 541);
+			this.Controls.Add(this.btnLogOut);
+			this.Controls.Add(this.btnTermsandConditions);
 			this.Controls.Add(this.btnTransferFunds);
 			this.Controls.Add(this.lblBalance);
 			this.Controls.Add(this.label2);
@@ -162,6 +190,8 @@ namespace Banking_Simulator_App
 			this.ResumeLayout(false);
 			this.PerformLayout();
 		}
+		private System.Windows.Forms.Button btnLogOut;
+		private System.Windows.Forms.Button btnTermsandConditions;
 		private System.Windows.Forms.Button btnTransferFunds;
 		private System.Windows.Forms.Label lblBalance;
 		private System.Windows.Forms.Label label2;

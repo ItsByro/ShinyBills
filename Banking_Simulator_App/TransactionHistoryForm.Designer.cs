@@ -34,12 +34,19 @@ namespace Banking_Simulator_App
 		/// </summary>
 		private void InitializeComponent()
 		{
+			this.SuspendLayout();
 			// 
 			// TransactionHistoryForm
 			// 
+			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.Text = "TransactionHistoryForm";
+			this.ClientSize = new System.Drawing.Size(829, 397);
+			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+			this.MaximizeBox = false;
 			this.Name = "TransactionHistoryForm";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+			this.Text = "Transaction History";
+			this.ResumeLayout(false);
 		}
 	}
 }

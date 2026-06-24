@@ -96,7 +96,7 @@ namespace Banking_Simulator_App
 			this.btnSignUp.BackColor = System.Drawing.Color.LemonChiffon;
 			this.btnSignUp.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnSignUp.ForeColor = System.Drawing.Color.Black;
-			this.btnSignUp.Location = new System.Drawing.Point(90, 329);
+			this.btnSignUp.Location = new System.Drawing.Point(90, 341);
 			this.btnSignUp.Name = "btnSignUp";
 			this.btnSignUp.Size = new System.Drawing.Size(184, 96);
 			this.btnSignUp.TabIndex = 5;
@@ -110,7 +110,7 @@ namespace Banking_Simulator_App
 			this.btnLogIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.btnLogIn.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnLogIn.ForeColor = System.Drawing.Color.Black;
-			this.btnLogIn.Location = new System.Drawing.Point(356, 329);
+			this.btnLogIn.Location = new System.Drawing.Point(356, 341);
 			this.btnLogIn.Name = "btnLogIn";
 			this.btnLogIn.Size = new System.Drawing.Size(184, 96);
 			this.btnLogIn.TabIndex = 6;
@@ -120,7 +120,7 @@ namespace Banking_Simulator_App
 			// 
 			// label4
 			// 
-			this.label4.Location = new System.Drawing.Point(-6, 438);
+			this.label4.Location = new System.Drawing.Point(-3, 455);
 			this.label4.Name = "label4";
 			this.label4.Size = new System.Drawing.Size(100, 23);
 			this.label4.TabIndex = 7;
@@ -132,7 +132,7 @@ namespace Banking_Simulator_App
 			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.SeaShell;
-			this.ClientSize = new System.Drawing.Size(623, 458);
+			this.ClientSize = new System.Drawing.Size(623, 479);
 			this.Controls.Add(this.label4);
 			this.Controls.Add(this.btnLogIn);
 			this.Controls.Add(this.btnSignUp);

@@ -141,6 +141,7 @@ namespace Banking_Simulator_App
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.checkboxTermsCondition);
 			this.Controls.Add(this.btnTransferFunds);
+			this.Cursor = System.Windows.Forms.Cursors.PanNW;
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
 			this.MaximizeBox = false;
 			this.Name = "TransferFundForm";

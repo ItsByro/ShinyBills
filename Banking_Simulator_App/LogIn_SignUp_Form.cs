@@ -46,7 +46,7 @@ namespace Banking_Simulator_App
 				return;
 			}
 			//checks if user password was not written
-			else if (string.IsNullOrWhiteSpace(password))
+			if (string.IsNullOrWhiteSpace(password))
 			{
 				MessageBox.Show("Enter your password.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
 				return;
