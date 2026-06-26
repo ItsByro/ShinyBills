@@ -39,7 +39,8 @@ namespace Banking_Simulator_App
 			{	
 				//if no issue has been found, updates the balance via session class first before the disk
 				Session.Balance = anticipitatedBalance;	
-				UserDataBase.UpdateBalance(Session.Email, Session.Balance);			
+				UserDataBase.UpdateBalance(Session.Email, Session.Balance);	
+				UserDataBase.LogTransaction("Deposit", DepositedMoney, Session.Balance, Session.Email, "Complete");				
 							
 				MessageBox.Show("Money Deposited to your Account.", "Balance Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
 				tbxDepositMoney.Clear();

@@ -44,6 +44,7 @@ namespace Banking_Simulator_App
 				//if no issue has been found, updates the balance via session class first before the disk
 				Session.Balance = AnticipitatedMoney;
 				UserDataBase.UpdateBalance(Session.Email, Session.Balance);
+				UserDataBase.LogTransaction("Withdraw", WithdrawalMoney, Session.Balance, Session.Email, "Complete");
 				
 				MessageBox.Show("Balance has been deducted from your withdrawal.", "Balance Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
 				tbxWithdrawMoney.Clear();

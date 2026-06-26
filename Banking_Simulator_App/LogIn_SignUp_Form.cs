@@ -51,7 +51,7 @@ namespace Banking_Simulator_App
 				MessageBox.Show("Enter your password.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
 				return;
 			}
-			//chekcs if email doesn't even have an '@'.
+			//checks if email doesn't even have an '@'.
 			else if (!email.Contains("@"))
 			{
 				MessageBox.Show("Incorrect Format of Email [Missing '@'].", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);

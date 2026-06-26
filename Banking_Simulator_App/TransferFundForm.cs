@@ -104,6 +104,9 @@ namespace Banking_Simulator_App
 				UserDataBase.UpdateBalance(Session.Email, senderNewBalance);
 				UserDataBase.UpdateBalance(RecipientEmail, recipientNewBalance);
 				
+				UserDataBase.LogTransaction("Transfer Out to " + RecipientEmail, TransferAmount, senderNewBalance, Session.Email, "Complete");
+				UserDataBase.LogTransaction("Transfer In from "+ Session.Email, TransferAmount, recipientNewBalance, RecipientEmail, "Complete");
+				
 				MessageBox.Show("Transfer Successful.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 				tbx_AmountInputted.Clear();
 				tbxRecipientEmail.Clear();

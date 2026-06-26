@@ -112,5 +112,36 @@ namespace Banking_Simulator_App
 			}
 			return -1;
 		}
+		//										0				1				2		    	3				4
+		public static void LogTransaction(string type, double amount, double balanceAfter, string email, string status)
+		{//									0									1				2				
+		    string line = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "|" + type + "|" + amount.ToString("F2") + "|" +
+		                  balanceAfter.ToString("F2") + "|" + //3
+		                  email + "|" + //4
+		                  status; //5
+		
+		    File.AppendAllText("TransactionHistory.txt", line + Environment.NewLine);
+		}
+		
+		public static List<string[]> GetTransactionHistory(string email)
+		{
+		    List<string[]> history = new List<string[]>();
+		
+		    if (!File.Exists("TransactionHistory.txt"))
+		        return history;
+		
+		    string[] lines = File.ReadAllLines("TransactionHistory.txt");
+		
+		    foreach (string line in lines)
+		    {
+		        string[] parts = line.Split('|');
+		        if (parts[4] == email)
+		        {
+		            history.Add(parts);
+		        }
+		    }
+		
+		    return history;
+		}
 	}
 }
