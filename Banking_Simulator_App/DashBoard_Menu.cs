@@ -76,14 +76,14 @@ namespace Banking_Simulator_App
 			                "1: This Simulation is created for solely use for educational,\n"+
 			                "and portfolio purposes only, It is NOT a Real Bank/Financial service.\n\n"+
 			                "2: No real money, accounts, or transaction are involved. All Balance,"+
-			                "Transactions, Deposits and even Transfered Funds are only exists within"+
+			                "Transactions, Deposits and even Transfered Funds are only exists within "+
 			                "this program local data files\n" +
 			                "[can be found via: Banking_Simulator_App/bin/Debug/UserDatabase.txt].\n\n" +
 			                "3: All Data is stored in a '.txt' file on your local machine.\n" +
 			                "The data is not Encrypted and cannot be treated as a secure storage.\n\n" +
 			                "4.The Developer[ItsByro] is not liable for any data loss, corruption," +
 			                "or even misuse from the users use of software.\n\n" +
-			                "By using this application, you are agreeing that this application/simulator" +
+			                "By using this application, you are agreeing that this application/simulator " +
 			                "is a 'demonstrating project', and will be used accordingly\n\n" +
 			                "Thank you for using ShinyBills\n" +
 			                "- ItsByro (*^*)",

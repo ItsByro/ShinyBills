@@ -60,7 +60,7 @@ namespace Banking_Simulator_App
 			//checks if user email doesnt exist in the "UserDatabase.txt"
 			else if (!UserDataBase.UserExists(email))
 			{
-				MessageBox.Show("Cannot Verify Sign Up First", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				MessageBox.Show("Cannot Verify Email, Sign Up First", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
 				return;
 			}
 			//checks if the written email/password has a typo/incorrect.
@@ -71,7 +71,7 @@ namespace Banking_Simulator_App
 			}
 			
 			//if all was pass, auto direct to another windows form named: "DashBoard_Menu.cs"
-			MessageBox.Show("Welcome back!", "Welcome Back!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+			MessageBox.Show(string.Format("Welcome back {0}!",Session.Username ,"Welcome Back!", MessageBoxButtons.OK, MessageBoxIcon.Information));
 			DashBoard_Menu Dashboard = new DashBoard_Menu();
 			Dashboard.FormClosed += (s, args) => this.Show();
 			Dashboard.Show();

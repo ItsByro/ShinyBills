@@ -199,9 +199,9 @@ namespace Banking_Simulator_App
 			// label2
 			// 
 			this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label2.Location = new System.Drawing.Point(48, 547);
+			this.label2.Location = new System.Drawing.Point(48, 553);
 			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(634, 80);
+			this.label2.Size = new System.Drawing.Size(634, 88);
 			this.label2.TabIndex = 19;
 			this.label2.Text = "you are agreeing to ShinyBills policies \r\nstated within";
 			// 
@@ -237,10 +237,10 @@ namespace Banking_Simulator_App
 			// 
 			this.btn_exit.BackColor = System.Drawing.Color.Wheat;
 			this.btn_exit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-			this.btn_exit.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btn_exit.Location = new System.Drawing.Point(216, 603);
+			this.btn_exit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btn_exit.Location = new System.Drawing.Point(239, 630);
 			this.btn_exit.Name = "btn_exit";
-			this.btn_exit.Size = new System.Drawing.Size(108, 73);
+			this.btn_exit.Size = new System.Drawing.Size(85, 46);
 			this.btn_exit.TabIndex = 20;
 			this.btn_exit.Text = "Exit";
 			this.btn_exit.UseVisualStyleBackColor = false;

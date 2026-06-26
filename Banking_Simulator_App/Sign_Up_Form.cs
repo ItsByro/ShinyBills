@@ -28,22 +28,22 @@ namespace Banking_Simulator_App
 			
 			if (string.IsNullOrWhiteSpace(email))
 			{
-				MessageBox.Show("No email Given.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				MessageBox.Show("No email given.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
 				return;
 			}
 			if (string.IsNullOrWhiteSpace(username))
 			{
-				MessageBox.Show("No username Given.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				MessageBox.Show("No username given.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
 				return;
 			}
 			if (string.IsNullOrWhiteSpace(phonenumber))
 			{
-				MessageBox.Show("No Phone Number Given.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				MessageBox.Show("No phone number fiven.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
 				return;
 			}
 			if (string.IsNullOrWhiteSpace(password))
 			{
-				MessageBox.Show("No Password Given.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				MessageBox.Show("No password given.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
 				return;
 			}
 			else if(checkboxTermsCondition.Checked == false)
@@ -76,8 +76,9 @@ namespace Banking_Simulator_App
 				MessageBox.Show("Please enter a valid phone number (10–11 digits).", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
     			return;
 			}
+			
 			UserDataBase.SaveUser(username, email, phonenumber, password);
-			MessageBox.Show("Account created!", "Account Created", MessageBoxButtons.OK, MessageBoxIcon.Information);
+			MessageBox.Show("Account created!", "Thank you!", MessageBoxButtons.OK, MessageBoxIcon.Information);
 			this.Close();
 		}
 		
