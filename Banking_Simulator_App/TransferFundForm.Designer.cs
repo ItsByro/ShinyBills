@@ -47,13 +47,14 @@ namespace Banking_Simulator_App
 			// 
 			// btnTransferFunds
 			// 
+			this.btnTransferFunds.BackColor = System.Drawing.Color.Linen;
 			this.btnTransferFunds.Font = new System.Drawing.Font("Microsoft YaHei UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnTransferFunds.Location = new System.Drawing.Point(150, 288);
 			this.btnTransferFunds.Name = "btnTransferFunds";
 			this.btnTransferFunds.Size = new System.Drawing.Size(185, 79);
 			this.btnTransferFunds.TabIndex = 1;
 			this.btnTransferFunds.Text = "Transfer";
-			this.btnTransferFunds.UseVisualStyleBackColor = true;
+			this.btnTransferFunds.UseVisualStyleBackColor = false;
 			this.btnTransferFunds.Click += new System.EventHandler(this.BtnTransferFundsClick);
 			// 
 			// checkboxTermsCondition
@@ -114,7 +115,7 @@ namespace Banking_Simulator_App
 			this.label2.Font = new System.Drawing.Font("Microsoft YaHei", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label2.Location = new System.Drawing.Point(36, 13);
 			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(374, 28);
+			this.label2.Size = new System.Drawing.Size(468, 28);
 			this.label2.TabIndex = 8;
 			this.label2.Text = "Enter the email you want to transfer:\r\n";
 			// 
@@ -131,6 +132,7 @@ namespace Banking_Simulator_App
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.BackColor = System.Drawing.Color.Bisque;
 			this.ClientSize = new System.Drawing.Size(485, 379);
 			this.Controls.Add(this.label4);
 			this.Controls.Add(this.label2);

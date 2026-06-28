@@ -46,6 +46,7 @@ namespace Banking_Simulator_App
 			this.dgvHistory.AllowUserToDeleteRows = false;
 			this.dgvHistory.AllowUserToResizeColumns = false;
 			this.dgvHistory.AllowUserToResizeRows = false;
+			this.dgvHistory.BackgroundColor = System.Drawing.Color.PapayaWhip;
 			this.dgvHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dgvHistory.Location = new System.Drawing.Point(12, 25);
 			this.dgvHistory.Name = "dgvHistory";
@@ -56,13 +57,15 @@ namespace Banking_Simulator_App
 			// 
 			// btnExit
 			// 
+			this.btnExit.BackColor = System.Drawing.Color.Linen;
+			this.btnExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
 			this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnExit.Location = new System.Drawing.Point(12, 375);
 			this.btnExit.Name = "btnExit";
 			this.btnExit.Size = new System.Drawing.Size(109, 47);
 			this.btnExit.TabIndex = 1;
 			this.btnExit.Text = "Exit";
-			this.btnExit.UseVisualStyleBackColor = true;
+			this.btnExit.UseVisualStyleBackColor = false;
 			this.btnExit.Click += new System.EventHandler(this.BtnExitClick);
 			// 
 			// lblTitle
@@ -79,6 +82,7 @@ namespace Banking_Simulator_App
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.BackColor = System.Drawing.Color.PeachPuff;
 			this.ClientSize = new System.Drawing.Size(831, 434);
 			this.Controls.Add(this.lblTitle);
 			this.Controls.Add(this.btnExit);
