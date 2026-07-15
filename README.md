@@ -17,6 +17,8 @@ This is "**ShinyBills**": A Desktop Banking Simulation, simulating what a real b
 
 ### Notes / Security Notes
 - This is an Active Learning Project for C#, so expect rougher edges and security risks.
+- Sometimes when the balance reaches up to 19 digits long, it may be difficult to reduce/change the balance, best to create another account.
+- Transfer Fund updates the user and receiver balance separately, so a failure mid-transfer could caus funds to be deducted without reaching the recipient (no rollback yet).
 - This is NOT a Production System only a mere learning project by myself.
   
 More known issues:
