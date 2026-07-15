@@ -24,7 +24,8 @@ More known issues:
 - No encryption for user data files.
 
 ### Development Tools
-- SharpDevelop v4.5.1
+- SharpDevelop v5.0
+- .NET Framework v4.5.1
 - Language: C#
 - UI Framework: WinForms
 - Data Persistence: text file (.txt)
