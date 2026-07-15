@@ -15,15 +15,16 @@ namespace Banking_Simulator_App
 		/*Saves user in a  ".txt" file
 		 * always used in "Sign In Form"
 		 */
-		public static void SaveUser(string Username, string Email, string Phone_Number, string Password)
+		public static void SaveUser(string Username, string Email, string Phone_Number, string Password, string PIN)
 		{
-			//Formatting [Username|Email|PhoneNumber|Password|Balance]						   always start at 0 when creating new account
-			string line = Username + "|" + Email + "|" + Phone_Number + "|" + Password + "|" + "0.00";
+			//				  0		 1		  2			3	   	 4	   5
+			//Formatting [Username|Email|PhoneNumber|Password|Balance|PIN]					   always start at 0 when creating new account
+			string line = Username + "|" + Email + "|" + Phone_Number + "|" + Password + "|" + "0.00" + "|" + PIN;
 			
 			File.AppendAllText("UserDatabase.txt", line + Environment.NewLine);
 		}
 		
-		//checks for user if exist 
+		//checks for user if exist through email 
 		public static bool UserExists(string Email)
 		{
 			if (File.Exists("UserDatabase.txt") == false) 
@@ -37,6 +38,26 @@ namespace Banking_Simulator_App
 			{
 				string[] parts = line.Split('|');
 				if (parts[1] == Email)
+				{
+					return true;
+				}
+			}
+			return false;
+		}
+		
+		//checks user if exist through PIN
+		public static bool UserPinExists(string PIN)
+		{
+			if (File.Exists("UserDatabase.txt") == false)
+			{
+				return false;
+			}
+			
+			string[] lines = File.ReadAllLines("UserDatabase.txt");
+			foreach (string line in lines) 
+			{
+				string[] parts = line.Split('|');
+				if (parts.Length >= 6 && parts[5] == PIN)
 				{
 					return true;
 				}

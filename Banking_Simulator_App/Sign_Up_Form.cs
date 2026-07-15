@@ -19,12 +19,19 @@ namespace Banking_Simulator_App
 		
 		void BtnSignUpClick(object sender, EventArgs e)
 		{
+			//variables
 			string username = txbUsername.Text;
 			string email = txbEmail.Text;
 			string phonenumber = txbPhoneNumber.Text; 
 			string password = txbPassword.Text;
 			string ConfirmPass = txbConfirmPass.Text;
 			long number = 0;
+			string SavedPin;
+			string newPin;
+			
+			//random class
+			Random random = new Random();
+				
 			
 			if (string.IsNullOrWhiteSpace(email))
 			{
@@ -77,7 +84,16 @@ namespace Banking_Simulator_App
     			return;
 			}
 			
-			UserDataBase.SaveUser(username, email, phonenumber, password);
+			//create a PIN
+			do
+			{
+			    newPin = random.Next(0, 10000).ToString("D4");
+			} while (UserDataBase.UserPinExists(newPin));
+			
+			SavedPin = newPin;
+			UserDataBase.SaveUser(username, email, phonenumber, password, SavedPin);
+			
+			MessageBox.Show(string.Format("Your PIN is: {0}\nRemember It",SavedPin), "PIN NUMBER", MessageBoxButtons.OK, MessageBoxIcon.Information);
 			MessageBox.Show("Account created!", "Thank you!", MessageBoxButtons.OK, MessageBoxIcon.Information);
 			this.Close();
 		}
@@ -120,8 +136,8 @@ namespace Banking_Simulator_App
 			MessageBox.Show("SHINYBILLS - Terms and Conditions\n\n"+
 			                "1: This Simulation is created for solely use for educational,\n"+
 			                "and portfolio purposes only, It is NOT a Real Bank/Financial service.\n\n"+
-			                "2: No real money, accounts, or transaction are involved. All Balance, "+
-			                "Transactions, Deposits and even Transfered Funds are only exists within"+
+			                "2: No real money, accounts, or transaction are involved. This is purely fictional. All Balance, "+
+			                "Transactions, Deposits and even Transfered Funds are only exists within "+
 			                "this program local data files\n" +
 			                "[can be found via: Banking_Simulator_App/bin/Debug/UserDatabase.txt].\n\n" +
 			                "3: All Data is stored in a '.txt' file on your local machine.\n" +

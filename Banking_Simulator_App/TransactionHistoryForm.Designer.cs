@@ -52,6 +52,7 @@ namespace Banking_Simulator_App
 			this.dgvHistory.Name = "dgvHistory";
 			this.dgvHistory.ReadOnly = true;
 			this.dgvHistory.RowTemplate.Height = 28;
+			this.dgvHistory.ShowCellErrors = false;
 			this.dgvHistory.Size = new System.Drawing.Size(800, 325);
 			this.dgvHistory.TabIndex = 0;
 			// 

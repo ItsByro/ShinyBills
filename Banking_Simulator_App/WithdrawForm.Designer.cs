@@ -93,6 +93,7 @@ namespace Banking_Simulator_App
 			this.tbxWithdrawMoney.Name = "tbxWithdrawMoney";
 			this.tbxWithdrawMoney.Size = new System.Drawing.Size(423, 39);
 			this.tbxWithdrawMoney.TabIndex = 9;
+			this.tbxWithdrawMoney.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TbxWithdrawMoneyKeyPress);
 			// 
 			// btnWithdraw
 			// 

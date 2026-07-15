@@ -43,13 +43,14 @@ namespace Banking_Simulator_App
 			this.tbx_AmountInputted = new System.Windows.Forms.TextBox();
 			this.label2 = new System.Windows.Forms.Label();
 			this.label4 = new System.Windows.Forms.Label();
+			this.btnexit = new System.Windows.Forms.Button();
 			this.SuspendLayout();
 			// 
 			// btnTransferFunds
 			// 
 			this.btnTransferFunds.BackColor = System.Drawing.Color.Linen;
 			this.btnTransferFunds.Font = new System.Drawing.Font("Microsoft YaHei UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnTransferFunds.Location = new System.Drawing.Point(150, 288);
+			this.btnTransferFunds.Location = new System.Drawing.Point(67, 288);
 			this.btnTransferFunds.Name = "btnTransferFunds";
 			this.btnTransferFunds.Size = new System.Drawing.Size(185, 79);
 			this.btnTransferFunds.TabIndex = 1;
@@ -128,12 +129,25 @@ namespace Banking_Simulator_App
 			this.label4.TabIndex = 9;
 			this.label4.Text = "Amount you want to input:";
 			// 
+			// btnexit
+			// 
+			this.btnexit.BackColor = System.Drawing.Color.Linen;
+			this.btnexit.Font = new System.Drawing.Font("Microsoft YaHei UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnexit.Location = new System.Drawing.Point(327, 288);
+			this.btnexit.Name = "btnexit";
+			this.btnexit.Size = new System.Drawing.Size(114, 79);
+			this.btnexit.TabIndex = 10;
+			this.btnexit.Text = "EXIT";
+			this.btnexit.UseVisualStyleBackColor = false;
+			this.btnexit.Click += new System.EventHandler(this.BtnexitClick);
+			// 
 			// TransferFundForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.Bisque;
 			this.ClientSize = new System.Drawing.Size(485, 379);
+			this.Controls.Add(this.btnexit);
 			this.Controls.Add(this.label4);
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.tbx_AmountInputted);
@@ -152,6 +166,7 @@ namespace Banking_Simulator_App
 			this.ResumeLayout(false);
 			this.PerformLayout();
 		}
+		private System.Windows.Forms.Button btnexit;
 		private System.Windows.Forms.Label label4;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.TextBox tbx_AmountInputted;

@@ -75,7 +75,7 @@ namespace Banking_Simulator_App
 			MessageBox.Show("SHINYBILLS - Terms and Conditions\n\n"+
 			                "1: This Simulation is created for solely use for educational,\n"+
 			                "and portfolio purposes only, It is NOT a Real Bank/Financial service.\n\n"+
-			                "2: No real money, accounts, or transaction are involved. All Balance,"+
+			                "2: No real money, accounts, or transaction are involved. All was purely fictional. All Balance,"+
 			                "Transactions, Deposits and even Transfered Funds are only exists within "+
 			                "this program local data files\n" +
 			                "[can be found via: Banking_Simulator_App/bin/Debug/UserDatabase.txt].\n\n" +

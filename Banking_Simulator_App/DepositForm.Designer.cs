@@ -77,6 +77,7 @@ namespace Banking_Simulator_App
 			this.tbxDepositMoney.Name = "tbxDepositMoney";
 			this.tbxDepositMoney.Size = new System.Drawing.Size(423, 39);
 			this.tbxDepositMoney.TabIndex = 2;
+			this.tbxDepositMoney.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TbxDepositMoneyKeyPress);
 			// 
 			// btnDeposit
 			// 

@@ -120,5 +120,10 @@ namespace Banking_Simulator_App
 				MessageBox.Show(string.Format("Transfer failed due to : {0}", ex.Message), "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
 		}
+		
+		void BtnexitClick(object sender, EventArgs e)
+		{
+			this.Close();
+		}
 	}
 }

@@ -55,6 +55,10 @@
     <Compile Include="DepositForm.Designer.cs">
       <DependentUpon>DepositForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="LogIn_PIN.cs" />
+    <Compile Include="LogIn_PIN.Designer.cs">
+      <DependentUpon>LogIn_PIN.cs</DependentUpon>
+    </Compile>
     <Compile Include="LogIn_SignUp_Form.cs" />
     <Compile Include="LogIn_SignUp_Form.Designer.cs">
       <DependentUpon>LogIn_SignUp_Form.cs</DependentUpon>
@@ -75,6 +79,7 @@
       <DependentUpon>TransferFundForm.cs</DependentUpon>
     </Compile>
     <Compile Include="UserDataBase.cs" />
+    <Compile Include="UserRecord.cs" />
     <Compile Include="WithdrawForm.cs" />
     <Compile Include="WithdrawForm.Designer.cs">
       <DependentUpon>WithdrawForm.cs</DependentUpon>
@@ -89,6 +94,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DepositForm.resx">
       <DependentUpon>DepositForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LogIn_PIN.resx">
+      <DependentUpon>LogIn_PIN.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LogIn_SignUp_Form.resx">
       <DependentUpon>LogIn_SignUp_Form.cs</DependentUpon>
