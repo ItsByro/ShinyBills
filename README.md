@@ -13,6 +13,7 @@ This is "**ShinyBills**": A Desktop Banking Simulation, simulating what a real b
 * All users will be stored **locally** in their PC via a ".txt" file [can be found via: "ShinyBills\Banking_Simulator_App\bin\Debug\UserDatabase.txt"].
 * User Transaction History can also be viewed **locally** in their PC via a ".txt" file [can be found also via: "ShinyBills\Banking_Simulator_App\bin\Debug\TransactionHistory.txt"].
 * These files are **auto-generated** once an account is created, no manual setup needed.
+* Format of the .txt files(UserDatabase) usually was: "Username|Email|PhoneNumber|Password|Balance|PIN"
 
 ### STATUS 
 - Active development since 6/11/26.
@@ -24,8 +25,8 @@ This is "**ShinyBills**": A Desktop Banking Simulation, simulating what a real b
 - This is NOT a Production System only a mere learning project by myself.
   
 More known issues:
-- Password only stored locally and in plain text.
-- PIN is stored in plain text, same as password.
+- Password only stored locally and in **plain text**.
+- PIN is stored in **plain text**, same as password.
 - No encryption for user data files.
 
 ### Development Tools
