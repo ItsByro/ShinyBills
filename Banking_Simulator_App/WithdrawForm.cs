@@ -53,7 +53,7 @@ namespace Banking_Simulator_App
 			{
 				//if an issue confirms, revert to the last balance.
 				Session.Balance = OldBalance;
-				MessageBox.Show(string.Format("Transaction failed. Could not connect to the database. Please try again. {0}", ex.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error));
+				MessageBox.Show(string.Format("Transaction failed. Could not connect to the database. Please try again. {0}", ex.Message), "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
 		}
 		

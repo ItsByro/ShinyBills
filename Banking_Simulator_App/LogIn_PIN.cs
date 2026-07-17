@@ -38,7 +38,7 @@ namespace Banking_Simulator_App
 			Session.Username = LoggedinUser.Username;
 			Session.Balance = LoggedinUser.Balance;
 			
-			MessageBox.Show(string.Format("Welcome back {0}!",Session.Username),"Welcome Back!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+			MessageBox.Show(string.Format("Welcome back {0}!", Session.Username),"Welcome Back!", MessageBoxButtons.OK, MessageBoxIcon.Information);
 			DashBoard_Menu Dashboard = new DashBoard_Menu();
 			Dashboard.FormClosed += (s, args) => this.Show();
 			Dashboard.Show();

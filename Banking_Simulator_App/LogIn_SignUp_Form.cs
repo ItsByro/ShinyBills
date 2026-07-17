@@ -71,7 +71,7 @@ namespace Banking_Simulator_App
 			}
 			
 			//if all was pass, auto direct to another windows form named: "DashBoard_Menu.cs"
-			MessageBox.Show(string.Format("Welcome back {0}!",Session.Username ),"Welcome Back!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+			MessageBox.Show(string.Format("Welcome back {0}!", Session.Username),"Welcome Back!", MessageBoxButtons.OK, MessageBoxIcon.Information);
 			DashBoard_Menu Dashboard = new DashBoard_Menu();
 			Dashboard.FormClosed += (s, args) => this.Show();
 			Dashboard.Show();
