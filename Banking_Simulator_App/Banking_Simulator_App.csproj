@@ -47,6 +47,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BankLogic.cs" />
     <Compile Include="DashBoard_Menu.cs" />
     <Compile Include="DashBoard_Menu.Designer.cs">
       <DependentUpon>DashBoard_Menu.cs</DependentUpon>
