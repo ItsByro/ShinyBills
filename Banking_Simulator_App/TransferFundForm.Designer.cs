@@ -110,6 +110,7 @@ namespace Banking_Simulator_App
 			this.tbx_AmountInputted.Name = "tbx_AmountInputted";
 			this.tbx_AmountInputted.Size = new System.Drawing.Size(405, 44);
 			this.tbx_AmountInputted.TabIndex = 7;
+			this.tbx_AmountInputted.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Tbx_AmountInputtedKeyPress);
 			// 
 			// label2
 			// 

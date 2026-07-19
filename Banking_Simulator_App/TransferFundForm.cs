@@ -112,5 +112,18 @@ namespace Banking_Simulator_App
 		{
 			this.Close();
 		}
+		
+		void Tbx_AmountInputtedKeyPress(object sender, KeyPressEventArgs e)
+		{
+			
+			if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back && e.KeyChar != '.')
+		    {
+		        e.Handled = true; //prevents user to type a string/symbols
+		    }
+			if (e.KeyChar == '.' && tbx_AmountInputted.Text.Contains("."))
+			{
+				e.Handled = true;
+			}
+		}
 	}
 }

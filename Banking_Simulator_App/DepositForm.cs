@@ -51,10 +51,16 @@ namespace Banking_Simulator_App
 		
 		void TbxDepositMoneyKeyPress(object sender, KeyPressEventArgs e)
 		{
-			if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back)
+			
+			if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back && e.KeyChar != '.')
 		    {
 		        e.Handled = true; //prevents user to type a string/symbols
 		    }
+			//[prevents user to type another '.']
+			if (e.KeyChar == '.' && tbxDepositMoney.Text.Contains("."))
+			{
+				e.Handled = true;
+			}
 		}
 	}
 }
