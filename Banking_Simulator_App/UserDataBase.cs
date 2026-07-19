@@ -108,7 +108,7 @@ namespace Banking_Simulator_App
 				string[] parts = lines[i].Split('|');
 				if (parts[1] == email) 
 				{
-					lines[i] = parts[0] + '|' + email + '|' + parts[2] + '|' + parts[3] + '|' + newBalance.ToString("F2");
+					lines[i] = parts[0] + '|' + email + '|' + parts[2] + '|' + parts[3] + '|' + newBalance.ToString("F2") + '|' + parts[5];
 				}
 			}
 			File.WriteAllLines("UserDatabase.txt", lines);
