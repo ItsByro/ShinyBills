@@ -19,7 +19,7 @@ namespace Banking_Simulator_App
 		{
 			//				  0		 1		  2			3	   	 4	   5
 			//Formatting [Username|Email|PhoneNumber|Password|Balance|PIN]					   always start at 0 when creating new account
-			string line = Username + "|" + Email + "|" + Phone_Number + "|" + Password + "|" + "0.00	" + "|" + PIN;
+			string line = Username + "|" + Email + "|" + Phone_Number + "|" + Password + "|" + "0.00" + "|" + PIN;
 			
 			File.AppendAllText("UserDatabase.txt", line + Environment.NewLine);
 		}
