@@ -16,7 +16,7 @@ namespace Banking_Simulator_App
 		 */
 		public static string Username = "";
         public static string Email    = "";
-        public static double Balance  = 0.00;
+        public static decimal Balance  = 0.0M;
 		public static string USER_PIN = "";
 	}
 }

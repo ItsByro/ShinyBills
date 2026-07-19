@@ -12,7 +12,7 @@ namespace Banking_Simulator_App
 {
 	public partial class DepositForm : Form
 	{
-		double DepositedMoney;
+		decimal DepositedMoney;
 		
 		public DepositForm()
 		{
@@ -21,7 +21,7 @@ namespace Banking_Simulator_App
 		
 		void BtnDepositClick(object sender, EventArgs e)
 		{
-			if (!double.TryParse(tbxDepositMoney.Text, out DepositedMoney)) 
+			if (!decimal.TryParse(tbxDepositMoney.Text, out DepositedMoney)) 
 			{
 				MessageBox.Show("Invalid, input a number.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
 				return;

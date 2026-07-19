@@ -12,7 +12,7 @@ namespace Banking_Simulator_App
 {
 	public partial class WithdrawForm : Form
 	{
-		double WithdrawalMoney;
+		decimal WithdrawalMoney;
 		
 		public WithdrawForm()
 		{
@@ -21,7 +21,7 @@ namespace Banking_Simulator_App
 		
 		void BtnWithdrawClick(object sender, EventArgs e)
 		{
-			if (!double.TryParse(tbxWithdrawMoney.Text, out WithdrawalMoney)) 
+			if (!decimal.TryParse(tbxWithdrawMoney.Text, out WithdrawalMoney)) 
 			{
 				MessageBox.Show("Invalid: Input a Number.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
 				return;

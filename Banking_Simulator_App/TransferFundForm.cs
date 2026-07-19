@@ -42,7 +42,7 @@ namespace Banking_Simulator_App
 		void BtnTransferFundsClick(object sender, EventArgs e)
 		{
 			string RecipientEmail = tbxRecipientEmail.Text;
-			double TransferAmount;
+			decimal TransferAmount;
 			
 			//checks if there is empty spaces of textbox
 			if (string.IsNullOrWhiteSpace(RecipientEmail) || string.IsNullOrWhiteSpace(tbx_AmountInputted.Text)) 
@@ -57,7 +57,7 @@ namespace Banking_Simulator_App
 				return;
 			}
 			//checks if the inputted is number not a string
-			if(!double.TryParse(tbx_AmountInputted.Text, out TransferAmount))
+			if(!decimal.TryParse(tbx_AmountInputted.Text, out TransferAmount))
 			{
 				MessageBox.Show("Invalid: Input a Number.", "WARNING",MessageBoxButtons.OK, MessageBoxIcon.Error);
 				return;
@@ -93,20 +93,10 @@ namespace Banking_Simulator_App
 				return;
 			}			
 			
-			double senderOldBalance = Session.Balance;
-			double senderNewBalance = Session.Balance - TransferAmount;
-			double recipientOldBalance = UserDataBase.GetBalance(RecipientEmail);
-			double recipientNewBalance = recipientOldBalance + TransferAmount;
 			
 			try 
 			{
-				Session.Balance = senderNewBalance;
-				UserDataBase.UpdateBalance(Session.Email, senderNewBalance);
-				UserDataBase.UpdateBalance(RecipientEmail, recipientNewBalance);
-				
-				UserDataBase.LogTransaction("Transfer Out to " + RecipientEmail, TransferAmount, senderNewBalance, Session.Email, "Complete");
-				UserDataBase.LogTransaction("Transfer In from "+ Session.Email, TransferAmount, recipientNewBalance, RecipientEmail, "Complete");
-				
+				BankLogic.TransferFundLogic(RecipientEmail, TransferAmount);
 				MessageBox.Show("Transfer Successful.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 				tbx_AmountInputted.Clear();
 				tbxRecipientEmail.Clear();
@@ -114,9 +104,6 @@ namespace Banking_Simulator_App
 			} 
 			catch (Exception ex) 
 			{
-				Session.Balance = senderOldBalance;
-				UserDataBase.UpdateBalance(Session.Email, senderOldBalance);
-				UserDataBase.UpdateBalance(RecipientEmail, recipientOldBalance);
 				MessageBox.Show(string.Format("Transfer failed due to : {0}", ex.Message), "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
 		}

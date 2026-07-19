@@ -19,7 +19,7 @@ namespace Banking_Simulator_App
 		{
 			//				  0		 1		  2			3	   	 4	   5
 			//Formatting [Username|Email|PhoneNumber|Password|Balance|PIN]					   always start at 0 when creating new account
-			string line = Username + "|" + Email + "|" + Phone_Number + "|" + Password + "|" + "0.00" + "|" + PIN;
+			string line = Username + "|" + Email + "|" + Phone_Number + "|" + Password + "|" + "0.00	" + "|" + PIN;
 			
 			File.AppendAllText("UserDatabase.txt", line + Environment.NewLine);
 		}
@@ -86,7 +86,7 @@ namespace Banking_Simulator_App
 				{
 					Session.Username = parts[0];
 					Session.Email = parts[1];
-					Session.Balance = double.Parse(parts[4]);
+					Session.Balance = decimal.Parse(parts[4]);
 					return true;
 				}
 			}
@@ -94,7 +94,7 @@ namespace Banking_Simulator_App
 		}
 		
 		//update balances based on changes from the session class
-		public static void UpdateBalance(string email, double newBalance)
+		public static void UpdateBalance(string email, decimal newBalance)
 		{
 			if (File.Exists("UserDatabase.txt") == false)
 			{
@@ -114,7 +114,7 @@ namespace Banking_Simulator_App
 			File.WriteAllLines("UserDatabase.txt", lines);
 		}
 		
-		public static double GetBalance(string email)
+		public static decimal GetBalance(string email)
 		{
 			if (!File.Exists("UserDatabase.txt"))
 			{
@@ -128,13 +128,13 @@ namespace Banking_Simulator_App
 				string[] parts = line.Split('|');
 				if (parts[1] == email) 
 				{
-					return double.Parse(parts[4]);
+					return decimal.Parse(parts[4]);
 				}
 			}
 			return -1;
 		}
 		//										0				1				2		    	3				4
-		public static void LogTransaction(string type, double amount, double balanceAfter, string email, string status)
+		public static void LogTransaction(string type, decimal amount, decimal balanceAfter, string email, string status)
 		{//									0									1				2				
 		    string line = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "|" + type + "|" + amount.ToString("F2") + "|" +
 		                  balanceAfter.ToString("F2") + "|" + //3

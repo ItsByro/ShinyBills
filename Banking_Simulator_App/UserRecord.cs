@@ -16,7 +16,7 @@ namespace Banking_Simulator_App
 		public string Email;
 		public string PhoneNumber;
 	    public string Password;
-	    public double Balance;
+	    public decimal Balance;
 	    public string PIN;
 	    
 	    //get every info in one
@@ -38,7 +38,7 @@ namespace Banking_Simulator_App
 	    			user.Email = parts[1];
 	    			user.PhoneNumber = parts[2];
 	    			user.Password = parts[3];
-	    			user.Balance = double.Parse(parts[4]);
+	    			user.Balance = decimal.Parse(parts[4]);
 	    			user.PIN = parts[5];
 	    			return user;
 	    		}

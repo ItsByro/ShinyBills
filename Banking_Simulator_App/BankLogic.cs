@@ -13,10 +13,10 @@ namespace Banking_Simulator_App
 	/// </summary>
 	public class BankLogic
 	{
-		public static void DepositLogic(double amount)
+		public static void DepositLogic(decimal amount)
 		{
-			double oldBalance = Session.Balance;
-			double anticipitatedBalance = Session.Balance + amount;
+			decimal oldBalance = Session.Balance;
+			decimal anticipitatedBalance = Session.Balance + amount;
 			
 			try 
 			{
@@ -31,10 +31,10 @@ namespace Banking_Simulator_App
 			}
 		}
 		
-		public static void WithdrawalLogic(double amount)
+		public static void WithdrawalLogic(decimal amount)
 		{
-			double oldBalance = Session.Balance;
-			double anticipitatedBalance = Session.Balance - amount;
+			decimal oldBalance = Session.Balance;
+			decimal anticipitatedBalance = Session.Balance - amount;
 			
 			try 
 			{
@@ -45,6 +45,32 @@ namespace Banking_Simulator_App
 			catch (Exception) 
 			{
 				Session.Balance = oldBalance;
+				throw;
+			}
+		}
+		
+		public static void TransferFundLogic(string RecipientEmail, decimal TransferAmount)
+		{
+			decimal senderOldBalance = Session.Balance;
+			decimal senderNewBalance = Session.Balance - TransferAmount;
+			decimal recipientOldBalance = UserDataBase.GetBalance(RecipientEmail);
+			decimal recipientNewBalance = recipientOldBalance + TransferAmount;
+			
+			
+			try 
+			{
+				Session.Balance = senderNewBalance;
+				UserDataBase.UpdateBalance(Session.Email, senderNewBalance);
+				UserDataBase.UpdateBalance(RecipientEmail, recipientNewBalance);
+				UserDataBase.LogTransaction("Transfer Out to " + RecipientEmail, TransferAmount, senderNewBalance, Session.Email, "Complete");
+				UserDataBase.LogTransaction("Transfer In from "+ Session.Email, TransferAmount, recipientNewBalance, RecipientEmail, "Complete");
+				
+			} 
+			catch (Exception) 
+			{
+				Session.Balance = senderOldBalance;
+				UserDataBase.UpdateBalance(Session.Email, senderOldBalance);
+				UserDataBase.UpdateBalance(RecipientEmail, recipientOldBalance);
 				throw;
 			}
 		}
