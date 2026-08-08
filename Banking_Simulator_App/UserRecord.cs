@@ -31,7 +31,7 @@ namespace Banking_Simulator_App
 	    	foreach (string line in lines) 
 	    	{
 	    		string[] parts = line.Split('|');
-	    		if (parts.Length >= 6 && parts[5] == PIN)
+	    		if (parts.Length >= 7 && parts[5] == PIN)
 	    		{
 	    			UserRecord user = new UserRecord();
 	    			user.Username = parts[0];

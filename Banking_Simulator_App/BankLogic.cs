@@ -13,6 +13,8 @@ namespace Banking_Simulator_App
 	/// </summary>
 	public class BankLogic
 	{
+		private static readonly object _transferlock = new object();
+		
 		public static void DepositLogic(decimal amount)
 		{
 			decimal oldBalance = Session.Balance;
@@ -51,27 +53,33 @@ namespace Banking_Simulator_App
 		
 		public static void TransferFundLogic(string RecipientEmail, decimal TransferAmount)
 		{
-			decimal senderOldBalance = Session.Balance;
-			decimal senderNewBalance = Session.Balance - TransferAmount;
-			decimal recipientOldBalance = UserDataBase.GetBalance(RecipientEmail);
-			decimal recipientNewBalance = recipientOldBalance + TransferAmount;
-			
-			
-			try 
+			lock(_transferlock)
 			{
-				Session.Balance = senderNewBalance;
-				UserDataBase.UpdateBalance(Session.Email, senderNewBalance);
-				UserDataBase.UpdateBalance(RecipientEmail, recipientNewBalance);
-				UserDataBase.LogTransaction("Transfer Out to " + RecipientEmail, TransferAmount, senderNewBalance, Session.Email, "Complete");
-				UserDataBase.LogTransaction("Transfer In from "+ Session.Email, TransferAmount, recipientNewBalance, RecipientEmail, "Complete");
+				decimal senderOldBalance = Session.Balance;
+				decimal recipientOldBalance = UserDataBase.GetBalance(RecipientEmail);	
+				decimal senderNewBalance = senderOldBalance - TransferAmount;
+				decimal recipientNewBalance = recipientOldBalance + TransferAmount;
 				
-			} 
-			catch (Exception) 
-			{
-				Session.Balance = senderOldBalance;
-				UserDataBase.UpdateBalance(Session.Email, senderOldBalance);
-				UserDataBase.UpdateBalance(RecipientEmail, recipientOldBalance);
-				throw;
+				bool senderUpdated = false;
+				
+				try 
+				{
+					UserDataBase.UpdateBalance(Session.Email, senderNewBalance);
+					senderUpdated = true;		
+					UserDataBase.UpdateBalance(RecipientEmail, recipientNewBalance);
+					Session.Balance = senderNewBalance;
+					UserDataBase.LogTransaction("Transfer Out to " + RecipientEmail, TransferAmount, senderNewBalance, Session.Email, "Complete");
+					UserDataBase.LogTransaction("Transfer In from "+ Session.Email, TransferAmount, recipientNewBalance, RecipientEmail, "Complete");
+					
+				} 
+				catch (Exception) 
+				{
+					if (senderUpdated) 
+					{
+						UserDataBase.UpdateBalance(Session.Email, senderOldBalance);
+					}
+					throw;
+				}	
 			}
 		}
 	}

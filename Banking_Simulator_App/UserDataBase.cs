@@ -7,6 +7,7 @@
 using System;
 using System.IO;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 
 namespace Banking_Simulator_App
 {
@@ -17,9 +18,13 @@ namespace Banking_Simulator_App
 		 */
 		public static void SaveUser(string Username, string Email, string Phone_Number, string Password, string PIN)
 		{
-			//				  0		 1		  2			3	   	 4	   5
-			//Formatting [Username|Email|PhoneNumber|Password|Balance|PIN]					   always start at 0 when creating new account
-			string line = Username + "|" + Email + "|" + Phone_Number + "|" + Password + "|" + "0.00" + "|" + PIN;
+			byte[] salt = pbkdf2_func.saltthepassword();
+			string hash = pbkdf2_func.Hashing(Password, salt);
+			string saltstring = Convert.ToBase64String(salt);
+			
+			//				  0		 1		  2			  3	           4      5   6		
+			//Formatting [Username|Email|PhoneNumber|Password(hash)|Balance|PIN|salt]		always start at 0 when creating new account
+			string line = Username + "|" + Email + "|" + Phone_Number + "|" + hash + "|" + "0.00" + "|" + PIN + "|" + saltstring;
 			
 			File.AppendAllText("UserDatabase.txt", line + Environment.NewLine);
 		}
@@ -37,7 +42,7 @@ namespace Banking_Simulator_App
 			foreach (string line in lines) 
 			{
 				string[] parts = line.Split('|');
-				if (parts[1] == Email)
+				if (parts.Length >= 7 && parts[1] == Email)
 				{
 					return true;
 				}
@@ -57,7 +62,7 @@ namespace Banking_Simulator_App
 			foreach (string line in lines) 
 			{
 				string[] parts = line.Split('|');
-				if (parts.Length >= 6 && parts[5] == PIN)
+				if (parts.Length >= 7 && parts[5] == PIN)
 				{
 					return true;
 				}
@@ -82,12 +87,19 @@ namespace Banking_Simulator_App
 			foreach (string line in lines) 
 			{
 				string[] parts = line.Split('|');
-				if (parts[1] == email && parts[3] == password) 
+				if (parts.Length >= 7 && parts[1] == email)
 				{
-					Session.Username = parts[0];
-					Session.Email = parts[1];
-					Session.Balance = decimal.Parse(parts[4]);
-					return true;
+					byte[] salt = Convert.FromBase64String(parts[6]);
+					string attemptHash = pbkdf2_func.Hashing(password, salt);
+					
+					if (attemptHash == parts[3])
+					{	
+						Session.Username = parts[0];
+						Session.Email = parts[1];
+						Session.Balance = decimal.Parse(parts[4]);
+						return true;		
+					}
+					return false;
 				}
 			}
 			return false;
@@ -106,9 +118,9 @@ namespace Banking_Simulator_App
 			for (int i = 0; i < lines.Length; i++) 
 			{
 				string[] parts = lines[i].Split('|');
-				if (parts[1] == email) 
+				if (parts.Length >= 7 && parts[1] == email)
 				{
-					lines[i] = parts[0] + '|' + email + '|' + parts[2] + '|' + parts[3] + '|' + newBalance.ToString("F2") + '|' + parts[5];
+					lines[i] = parts[0] + '|' + email + '|' + parts[2] + '|' + parts[3] + '|' + newBalance.ToString("F2") + '|' + parts[5] + '|' + parts[6];
 				}
 			}
 			File.WriteAllLines("UserDatabase.txt", lines);
@@ -126,7 +138,7 @@ namespace Banking_Simulator_App
 			foreach (string line in lines) 
 			{
 				string[] parts = line.Split('|');
-				if (parts[1] == email) 
+				if (parts.Length >= 7 && parts[1] == email) 
 				{
 					return decimal.Parse(parts[4]);
 				}
@@ -156,7 +168,7 @@ namespace Banking_Simulator_App
 		    foreach (string line in lines)
 		    {
 		        string[] parts = line.Split('|');
-		        if (parts[4] == email)
+		        if (parts.Length >= 6 && parts[4] == email)
 		        {
 		            history.Add(parts);
 		        }

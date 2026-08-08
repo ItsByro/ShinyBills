@@ -84,6 +84,7 @@ namespace Banking_Simulator_App
 			this.txbPhoneNumber.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.txbPhoneNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txbPhoneNumber.Location = new System.Drawing.Point(35, 282);
+			this.txbPhoneNumber.MaxLength = 10;
 			this.txbPhoneNumber.Name = "txbPhoneNumber";
 			this.txbPhoneNumber.Size = new System.Drawing.Size(416, 32);
 			this.txbPhoneNumber.TabIndex = 2;

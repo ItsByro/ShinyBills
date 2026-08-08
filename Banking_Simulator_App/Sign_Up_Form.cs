@@ -88,10 +88,17 @@ namespace Banking_Simulator_App
 			do
 			{
 			    newPin = random.Next(0, 10000).ToString("D4");
-			} while (UserDataBase.UserPinExists(newPin));
+			} 
+			
+			while (UserDataBase.UserPinExists(newPin));
 			
 			SavedPin = newPin;
 			UserDataBase.SaveUser(username, email, phonenumber, password, SavedPin);
+			
+			Session.Username = username;
+			Session.Email = email;
+			Session.Balance = 0.00m;
+			Session.USER_PIN = SavedPin;
 			
 			MessageBox.Show(string.Format("Your PIN is: {0}\nRemember It",SavedPin), "PIN NUMBER", MessageBoxButtons.OK, MessageBoxIcon.Information);
 			MessageBox.Show("Account created!", "Thank you!", MessageBoxButtons.OK, MessageBoxIcon.Information);

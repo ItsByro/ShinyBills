@@ -21,11 +21,11 @@ This is "**ShinyBills**": A Desktop Banking Simulation, simulating what a real b
 ### Notes / Security Notes
 - This is an Active Learning Project for C#, so expect rougher edges and security risks.
 - Sometimes when the balance reaches up to 19 digits long, it may be difficult to reduce/change the balance, best to create another account.
-- Transfer Fund updates the user and receiver balance separately, so a failure mid-transfer could cause funds to be deducted without reaching the recipient (no rollback yet).
+- Transfer Funds have partial rollback: if balance update fails, both recipient and sender balances have reverted, however, Transaction History may still be show "Complete" for a transfer that was reverted.
 - This is NOT a Production System only a mere learning project by myself.
   
 More known issues:
-- Password only stored locally and in **plain text**.
+- Password only stored locally and in **plain text** (Note: that this plain text can be edited).
 - PIN is stored in **plain text**, same as password.
 - No encryption for user data files.
 
