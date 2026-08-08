@@ -8,12 +8,13 @@ This is "**ShinyBills**": A Desktop Banking Simulation, simulating what a real b
 * **Transfer Funds**: Let users send money between accounts locally.
 * **Transaction History** — view your transaction history like deposit, withdraw, and even transfer funds.
 * A Randomized PIN given by the system to simulate a real ATM.
+* [Update 8/8/26] Now Passwords stores hashed **PBKDF2** (100,000 iterations + SHA256) instead of plain text.
 
 ### IMPORTANT
 * All users will be stored **locally** in their PC via a ".txt" file [can be found via: "ShinyBills\Banking_Simulator_App\bin\Debug\UserDatabase.txt"].
-* User Transaction History can also be viewed **locally** in their PC via a ".txt" file [can be found also via: "ShinyBills\Banking_Simulator_App\bin\Debug\TransactionHistory.txt"].
+* All User Transaction History can also be viewed **locally** in their PC via a ".txt" file [can be found also via: "ShinyBills\Banking_Simulator_App\bin\Debug\TransactionHistory.txt"].
 * These files are **auto-generated** once an account is created, no manual setup needed.
-* Format of the .txt files(UserDatabase) usually was: "Username|Email|PhoneNumber|Password|Balance|PIN"
+* Format of the .txt files(UserDatabase) usually was: "Username|Email|PhoneNumber|Password(hash)|Balance|PIN|salt"
 
 ### STATUS 
 - Active development since 6/11/26.
@@ -24,10 +25,10 @@ This is "**ShinyBills**": A Desktop Banking Simulation, simulating what a real b
 - Transfer Funds have partial rollback: if balance update fails, both recipient and sender balances have reverted, however, Transaction History may still be show "Complete" for a transfer that was reverted.
 - This is NOT a Production System only a mere learning project by myself.
   
-More known issues:
-- Password only stored locally and in **plain text** (Note: that this plain text can be edited).
-- PIN is stored in **plain text**, same as password.
-- No encryption for user data files.
+#### More known issues:
+- Manually editing the ".txt file" can corrupt the password hash or salt, breaking login for that account.
+- PIN is stored in **plain text**.
+- No encryption for user data files (only password was hashed, not the whole file)
 
 ### Development Tools
 - SharpDevelop v5.0
