@@ -18,6 +18,7 @@ This is "**ShinyBills**": A Desktop Banking Simulation, simulating what a real b
 
 ## STATUS 
 - Active development since 6/11/26.
+- On hold for now(9/19/26) due to amount of school workload.
 
 ## Notes / Security Notes
 - This is an Active Learning Project for C#, so expect rougher edges and security risks.
